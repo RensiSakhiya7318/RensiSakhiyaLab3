@@ -1,17 +1,15 @@
 apply plugin: 'com.android.application'
 
 android {
-    namespace = "com.example.simpleviews1"
-    compileSdkVersion 34
+    namespace "rensi.sakhiya.n01657318"
+    compileSdk 34
 
     defaultConfig {
-        applicationId "com.example.simplelayoutmanagers"
-        minSdkVersion 31
-        targetSdkVersion 34
+        applicationId "rensi.sakhiya.n01657318"
+        minSdk 31
+        targetSdk 34
         versionCode 1
         versionName "1.0"
-
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {

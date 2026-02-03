@@ -24,10 +24,10 @@ public class MainActivity extends AppCompatActivity {
     private int imageIndex = 0;
 
     private final int[] images = {
-            R.drawable.img1,
-            R.drawable.img2,
-            R.drawable.img3,
-            R.drawable.img4
+            R.drawable.img1_background,
+            R.drawable.img2_background,
+            R.drawable.img3_background,
+            R.drawable.img4_background
     };
 
     private final String[] imageNames = {
@@ -94,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void showExitDialog() {
         new AlertDialog.Builder(this)
-                .setIcon(R.drawable.ic_exit)
+                .setIcon(R.drawable.ic_exit_background)
                 .setTitle(R.string.app_name)
                 .setMessage(R.string.exit_msg)
                 .setCancelable(false)
