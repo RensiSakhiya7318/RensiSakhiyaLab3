@@ -1,0 +1,16 @@
+<!-- Rensi Sakhiya N01657318 -->
+<resources>
+    <string name="app_name">RensiLab3</string>
+    <string name="exit_msg">Voulez-vous quitter l'application ?</string>
+    <string name="yes">Oui</string>
+    <string name="no">Non</string>
+    <string name="open">Ouvrir</string>
+    <string name="save">Sauvegarder</string>
+    <string name="switch_label">Interrupteur</string>
+    <string name="switch_on">Interrupteur activé</string>
+    <string name="switch_off">Interrupteur désactivé</string>
+    <string name="hint_text">Entrez du texte</string>
+    <string name="toast_image">Rensi - %1$s</string>
+    <string name="image_desc">Bouton image</string>
+
+</resources>
