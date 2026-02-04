@@ -1,17 +1,27 @@
-<!-- Rensi Sakhiya N01657318 -->
 <resources>
+    <!-- Rensi Sakhiya - N01657318 -->
+
     <string name="app_name">RensiLab3</string>
-    <string name="exit_msg">Do you want to exit the app?</string>
-    <string name="yes">Yes</string>
-    <string name="no">No</string>
-    <string name="open">Open</string>
-    <string name="save">Save</string>
+
+    <string name="save">SAVE</string>
+    <string name="open">OPEN</string>
+    <string name="enter_text">Enter some text</string>
+    <string name="autosave">Autosave</string>
+
+    <string name="option1">Option 1</string>
+    <string name="option2">Option 2</string>
+    <string name="off">OFF</string>
+
     <string name="switch_label">Switch</string>
     <string name="switch_on">Switch ON</string>
     <string name="switch_off">Switch OFF</string>
-    <string name="hint_text">Enter some text</string>
-    <string name="toast_image">Rensi - %1$s</string>
-    <string name="image_desc">Image button</string>
 
+    <string name="exit_msg">Do you want to close the app?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
 
+    <string name="image_desc">Main image</string>
+    <string name="star_desc">Image button</string>
+
+    <string name="website_url">https://www.google.com</string>
 </resources>

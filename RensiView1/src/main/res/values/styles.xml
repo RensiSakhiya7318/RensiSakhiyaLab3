@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <!-- Rensi Sakhiya N01657318 -->
-    <style name="Theme.RensiLab3"
-        parent="Theme.Material3.DayNight.NoActionBar">
-
-        <!-- Customize your theme if required -->
+    <style name="Theme.RensiLab3" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">#6750A4</item>
+        <item name="colorPrimaryVariant">#4F378B</item>
     </style>
-
 </resources>

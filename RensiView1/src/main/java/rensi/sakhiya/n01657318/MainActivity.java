@@ -1,111 +1,89 @@
 package rensi.sakhiya.n01657318;
 
-// Name: Rensi Sakhiya
-// Student ID: N01657318
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.util.Log;
-import android.widget.EditText;
+import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.Toast;
 
-import androidx.activity.OnBackPressedCallback;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.SwitchCompat;
 
 import com.google.android.material.snackbar.Snackbar;
+import com.google.android.material.switchmaterial.SwitchMaterial;
+
+
 
 public class MainActivity extends AppCompatActivity {
 
-    private int imageIndex = 0;
+    int index = 0;
 
-    private final int[] images = {
-            R.drawable.img1_background,
-            R.drawable.img2_background,
-            R.drawable.img3_background,
-            R.drawable.img4_background
-    };
-
-    private final String[] imageNames = {
-            "Image 1",
-            "Image 2",
-            "Image 3",
-            "Image 4"
+    int[] images = {
+            R.drawable.img1,
+            R.drawable.img2,
+            R.drawable.img3,
+            R.drawable.img4
     };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        setTitle(getString(R.string.app_name));
 
+        Button btnSave = findViewById(R.id.btnSave);
+        Button btnOpen = findViewById(R.id.btnOpen);
         ImageButton imageButton = findViewById(R.id.imageButton);
-        EditText editText = findViewById(R.id.editText);
-        SwitchCompat switchBtn = findViewById(R.id.switch1);
+        SwitchMaterial appSwitch = findViewById(R.id.appSwitch);
 
-        // ImageButton click – rotate images
+        // OPEN → Device Settings
+        btnOpen.setOnClickListener(v ->
+                startActivity(new Intent(Settings.ACTION_SETTINGS)));
+
+        // SAVE → Website
+        btnSave.setOnClickListener(v ->
+                startActivity(new Intent(Intent.ACTION_VIEW,
+                        Uri.parse(getString(R.string.website_url)))));
+
+        // Rotate images
         imageButton.setOnClickListener(v -> {
-            imageButton.setImageResource(images[imageIndex]);
-            Toast.makeText(
-                    this,
-                    getString(R.string.toast_image, imageNames[imageIndex]),
-                    Toast.LENGTH_SHORT
-            ).show();
-
-            imageIndex = (imageIndex + 1) % images.length;
+            imageButton.setImageResource(images[index]);
+            index = (index + 1) % images.length;
         });
 
-        // Open Settings button
-        findViewById(R.id.btnOpen).setOnClickListener(v ->
-                startActivity(new Intent(Settings.ACTION_SETTINGS))
-        );
+        // Switch Snackbar
+        appSwitch.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            String msg = isChecked
+                    ? getString(R.string.switch_on)
+                    : getString(R.string.switch_off);
 
-        // Save button – open website
-        findViewById(R.id.btnSave).setOnClickListener(v ->
-                startActivity(new Intent(
-                        Intent.ACTION_VIEW,
-                        Uri.parse("https://www.google.com")
-                ))
-        );
-
-        // Switch – Snackbar
-        switchBtn.setOnCheckedChangeListener((buttonView, isChecked) ->
-                Snackbar.make(
-                        buttonView,
-                        isChecked
-                                ? getString(R.string.switch_on)
-                                : getString(R.string.switch_off),
-                        Snackbar.LENGTH_LONG
-                ).show()
-        );
-
-        // Handle back button
-        getOnBackPressedDispatcher().addCallback(this,
-                new OnBackPressedCallback(true) {
-                    @Override
-                    public void handleOnBackPressed() {
-                        showExitDialog();
-                    }
-                });
+            Snackbar.make(buttonView, msg, Snackbar.LENGTH_LONG).show();
+        });
     }
 
-    private void showExitDialog() {
+    // Back button dialog
+    @SuppressLint("MissingSuperCall")
+    @Override
+    public void onBackPressed() {
         new AlertDialog.Builder(this)
-                .setIcon(R.drawable.ic_exit_background)
-                .setTitle(R.string.app_name)
-                .setMessage(R.string.exit_msg)
+                .setTitle(getString(R.string.app_name))
+                .setMessage(getString(R.string.exit_msg))
                 .setCancelable(false)
-                .setPositiveButton(R.string.yes, (dialog, which) -> finish())
-                .setNegativeButton(R.string.no, null)
+                .setPositiveButton(getString(R.string.yes), (d, w) -> finish())
+                .setNegativeButton(getString(R.string.no), (d, w) -> d.dismiss())
+                .setIcon(R.drawable.ic_exit)
                 .show();
     }
 
+
+    // Log when app goes background
     @Override
     protected void onPause() {
         super.onPause();
-        Log.d("LAB3", "Rensi Sakhiya N01657318");
+        Log.d("LAB3", "Rensi Sakhiya - N01657318");
     }
 }

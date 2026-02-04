@@ -1,0 +1,27 @@
+<resources>
+    <!-- Rensi Sakhiya - N01657318 -->
+
+    <string name="app_name">RensiLab3</string>
+
+    <string name="save">ENREGISTRER</string>
+    <string name="open">OUVRIR</string>
+    <string name="enter_text">Entrez du texte</string>
+    <string name="autosave">Sauvegarde automatique</string>
+
+    <string name="option1">Option 1</string>
+    <string name="option2">Option 2</string>
+    <string name="off">ARRÊT</string>
+
+    <string name="switch_label">Interrupteur</string>
+    <string name="switch_on">Interrupteur ACTIVÉ</string>
+    <string name="switch_off">Interrupteur DÉSACTIVÉ</string>
+
+    <string name="exit_msg">Voulez-vous fermer lapplication ?</string>
+    <string name="yes">Oui</string>
+    <string name="no">Non</string>
+
+    <string name="image_desc">Image principale</string>
+    <string name="star_desc">Bouton image</string>
+
+    <string name="website_url">https://www.google.com</string>
+</resources>

@@ -1,43 +1,114 @@
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:padding="16dp"
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/editText"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/hint_text"
-        android:inputType="text"
-        android:maxLength="10"
-        android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
-        android:importantForAutofill="no"/>
+        android:orientation="vertical"
+        android:padding="12dp">
 
-    <Button
-        android:id="@+id/btnOpen"
-        android:text="@string/open"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        <!-- SAVE (FULL WIDTH, LIGHT GRAY) -->
+        <Button
+            android:id="@+id/btnSave"
+            style="@style/Widget.AppCompat.Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/save" />
 
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/img1_background"
-        android:contentDescription="@string/image_desc"/>
 
-    <Button
-        android:id="@+id/btnSave"
-        android:text="@string/save"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        <!-- OPEN (SMALL BUTTON) -->
+        <Button
+            android:id="@+id/btnOpen"
+            style="@style/Widget.AppCompat.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/open" />
 
-    <androidx.appcompat.widget.SwitchCompat
-        android:id="@+id/switch1"
-        android:text="@string/switch_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
 
-</LinearLayout>
+        <!-- IMAGE -->
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/img1"
+            android:scaleType="centerCrop"
+            android:contentDescription="@string/image_desc" />
+
+        <!-- EDIT TEXT -->
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/enter_text"
+            android:inputType="text"
+            android:maxLength="10"
+            android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+            android:importantForAutofill="no"
+            android:layout_marginTop="8dp" />
+
+        <!-- AUTOSAVE -->
+        <CheckBox
+            android:id="@+id/checkAutosave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/autosave"
+            android:layout_marginTop="4dp" />
+
+        <!-- STAR IMAGE BUTTON -->
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/img1"
+            android:background="@null"
+            android:contentDescription="@string/star_desc"
+            android:layout_marginTop="4dp" />
+
+
+        <!-- RADIO BUTTONS -->
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/radioOption1"
+                style="@style/Widget.AppCompat.CompoundButton.RadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/option1"
+                android:checked="true" />
+
+            <RadioButton
+                android:id="@+id/radioOption2"
+                style="@style/Widget.AppCompat.CompoundButton.RadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/option2" />
+
+        </RadioGroup>
+
+
+        <!-- OFF BUTTON -->
+        <Button
+            style="@style/Widget.AppCompat.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/off" />
+
+
+
+        <!-- SWITCH -->
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/appSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/switch_label"
+            android:layout_marginTop="4dp" />
+
+    </LinearLayout>
+</ScrollView>
